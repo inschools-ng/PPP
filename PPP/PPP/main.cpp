@@ -1,8 +1,9 @@
-#include <iostream>
-using namespace std;
+#include "main.h"
 
 int main() 
 {
+    using namespace std;
+
   /* cout << "Hello World!\n";
    cout << "Take the road from the entrance to the nearest junction\n";
    cout << "Take a left, then the immediate stairs by the right to the third floor.\n";
@@ -76,7 +77,7 @@ int main()
     if (a != b) cout << a << " != " << b << '\n';
     else cout << "We have large characters\n" << endl;*/
     
-    double d = 0; 
+    /*double d = 0; 
     
     while (cin >> d)
     {
@@ -94,6 +95,101 @@ int main()
     
       
     
+    */
+    
+    /*double x = 2.7;
+
+    //    lots of code 
+    
+    int y = x; // y becomes 2
+    
+    cout << y << endl;
+    */
+    
+    /*int a = 1000;
+    
+    char b = a; // b becomes -24 on some machines
+    cout << b << endl;
+    */
+    
+   /* double z {2.7}; // OK
+    
+    int y = {z}; // error: double -> int might narrow
+
+    int a {1000}; // OK
+    
+    char b {a};  // error: int -> char might narrow 
+    
+    cout << y << b << endl; 
+    */
+    
+    string NameOfSender;                    // name of sender of letter
+    string NameOfRecepient;               // name of the recepient 
+    string NameOfFriend;                     // name of friend
+    char FriendGender{};                       // sex of friend
+    int AgeOfRecepient{};                     // age of receiver 
+    constexpr unsigned MinAge{0};     //  minimum age of recipient
+    constexpr unsigned MaxAge{130}; // maximum age of recipient 
+    
+    
+    cout << "Enter Name of Sender of Letter\n";
+    cin >> NameOfSender;
+    
+    cout << "Enter Name of Recipient\n";
+    cin >> NameOfRecepient;
+    
+    cout << "Enter Age of Recepient\n";
+    cin >> AgeOfRecepient;
+    
+    /*if ( AgeOfRecepient > MinAge && AgeOfRecepient < MaxAge )
+    {
+        simple_error("You should be kidding!!");
+    }*/
+    
+    cout << "Enter Name of Friend\n";
+    cin >> NameOfFriend;
+    
+    cout << "Enter Gender of Friend\n";
+    cin >> FriendGender;
+    // static_cast enables conversion from char to int without warning 
+    FriendGender = static_cast<unsigned char>(tolower(FriendGender));
+    
+    cout << "Dear " << NameOfRecepient << ", " << "\nHow are you? I am fine and I miss you. \nIts a great time to be alive, I have published my game and have sold 500,000 copies in two months.";
+    cout << "Have you seen " << NameOfFriend << " recently?\n";
+    
+    // Identification of the Gender of the Friend 
+    if ( FriendGender == 'm' ) //|| FriendGender == 'm' ) 
+    {
+        cout << "Please ask him to call me.\n";
+    }
+    else if ( FriendGender == 'f') //|| FriendGender == 'f' )
+    {
+        cout << "Please ask her to call me.\n";
+    }
+    else 
+    {
+        cout << "Please ask them to call me.\n";
+    }
+    
+    // Identification of the Age of Receiver 
+    if ( AgeOfRecepient <= 12) 
+    {
+        cout << "Next year, you will be " << AgeOfRecepient + 1 << ".\n";
+    }
+    else if (AgeOfRecepient == 17)
+    {
+        cout << "Next year, you will be " << AgeOfRecepient + 1 << " and be able to vote. \n";
+    }
+    else if (AgeOfRecepient > 70)
+    {
+        cout << "I hope you are enjoying retirement. \n";
+    }
+    else 
+    {
+           
+    }
+    
+    cout << "Yours sincerely, " << "\n\n\n" << NameOfSender << endl;
     
     return 0; 
 }
