@@ -123,7 +123,7 @@ int main()
     cout << y << b << endl; 
     */
     
-    string NameOfSender;                    // name of sender of letter
+    /*string NameOfSender;                    // name of sender of letter
     string NameOfRecepient;               // name of the recepient 
     string NameOfFriend;                     // name of friend
     char FriendGender{};                       // sex of friend
@@ -146,7 +146,7 @@ int main()
         simple_error("You should be kidding!!");
     }*/
     
-    cout << "Enter Name of Friend\n";
+    /*cout << "Enter Name of Friend\n";
     cin >> NameOfFriend;
     
     cout << "Enter Gender of Friend\n";
@@ -190,6 +190,132 @@ int main()
     }
     
     cout << "Yours sincerely, " << "\n\n\n" << NameOfSender << endl;
+    */
+    
+    
+    // Exercise Two 
+ 
+    /*cout << "*********************************\n";
+    cout << "**Convert miles to kilometers.**\n";
+    cout << "*********************************\n";
+
+    double miles;
+    cout << "Enter Number of Miles: ";
+    if (cin >> miles) {
+		cout << miles << " miles converted to kilometers is " << miles * 1.609 << endl;
+	} else {
+		simple_error("Invalid entry");
+	}
+    
+    
+	keep_window_open();
+    
+    // code not working as expected!!!!!!!!*/
+    
+    // Exercise 3
+    
+   /* int double  k = 5;
+    int double = 5;
+    int = 5; 
+    int k = 5; 
+    double = 5; 
+    double k = 5; 
+    
+    cout << k << endl; 
+ */
+ 
+    // Exercise 6
+    /*
+    cout<< "*****************************************\n"
+        << "*****Exercise 6: Numerical Sequence******\n"
+        << "*****************************************\n";
+    
+    cout << "Enter three different integers: \n";
+    int num1 = 0; 
+    int num2 = 0;
+    int num3 = 0; 
+    
+    int MinNum; 
+    int MidNum;
+    int MaxNum; 
+    
+    if (!(cin >> num1 >> num2 >> num3))
+        {
+            simple_error("Invalid entry"); 
+        }
+    
+    
+    // Num1 taking the minimum value, 
+    // Num2 taking the mid value,
+    // Num3 taking the maximum value 
+    
+    if ( (num1 <= num2) && (num1 <= num3) )
+    {
+        if (num2 <= num3) 
+        {
+           MinNum = num1;
+           MidNum = num2;
+           MaxNum = num3;
+        }
+        else 
+        {
+            MinNum = num1;
+            MidNum = num3;
+            MaxNum = num2;
+        }
+    }
+    
+    else if ( (num2 <= num3) && (num2 <= num1) )
+    {
+         if (num3 <= num2) 
+        {
+            MinNum = num2;
+            MidNum = num3;
+            MaxNum = num1;
+        }
+        else 
+        {
+            MinNum = num2;
+            MidNum = num1;
+            MaxNum = num3;
+        }
+    }
+    
+    else 
+    {
+         if (num1 <= num2) 
+        {
+           MinNum = num3;
+           MidNum = num1;
+           MaxNum = num2;
+        }
+        else 
+        {
+            MinNum = num3;
+            MidNum = num2;
+            MaxNum = num1;
+        }
+    }
+   
+    cout << MinNum << ", " << MidNum << ", " << MaxNum << endl;
+    
+     * keep_window_open(); 
+    */
+    
+    int num{0};
+    
+    cout << "Enter an integer: " << endl; 
+    
+    cin >> num; 
+    
+    cout << "The integer " << num << " is " << ( (num % 2) ? "odd" : "even" ) << endl;
+    
+    
+    
+    
+    
+    
+    
     
     return 0; 
 }
