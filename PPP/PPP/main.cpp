@@ -301,7 +301,7 @@ int main()
     
      * keep_window_open(); 
     */
-    
+    /*
     int num{0};
     
     cout << "Enter an integer: " << endl; 
@@ -309,13 +309,54 @@ int main()
     cin >> num; 
     
     cout << "The integer " << num << " is " << ( (num % 2) ? "odd" : "even" ) << endl;
+    */
+    // alphanum = static_cast<unsigned char>(tolower(alphanum));
+    
+    string alphanum; 
+
+    cout << "Enter a number in alphabets from 0 - 4 (e.g 'zero')\n"; 
+
+    while (cin >> alphanum)
+    {
+        int num{INT32_MIN};
+        if ( alphanum == "zero" )
+        {
+            num = 0;
+        }
+        
+        else if ( alphanum == "one")
+        {
+            num = 1;
+        }
+        
+        else if ( alphanum == "two")
+        {
+            num = 2; 
+        }
+        
+        else if ( alphanum == "three")
+        {
+            num = 3;
+        }
+        
+        else if (alphanum == "four")
+        {
+            num = 4; 
+        }
+        
+        else 
+        {
+            cout << "Not in my dictionary!!!" <<  endl;
+        }
+        
+        if ( num >= 0 ) 
+        {
+            cout << alphanum << " is also known as " << num << endl;
+        }
+        
+    } 
     
     
-    
-    
-    
-    
-    
-    
+    keep_window_open();
     return 0; 
 }
