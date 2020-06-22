@@ -17,10 +17,16 @@ inline void keep_window_open()
     std::cin.get();
 }
 
-// Simple function to be used Jtaim
+// Simple function to be used 
 inline void  simple_error(std::string s) // write error: s and exit program 
 {
     std::cerr << "error: " << s << std::endl; 
     keep_window_open();
     std::exit(1);
+}
+
+// Simple function to square numbers
+void print_square(int v)
+{
+    std::cout << v << '\t' << v * v << '\n';
 }

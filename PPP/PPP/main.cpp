@@ -1,8 +1,8 @@
 #include "main.h"
 
-int main() 
-{
-    using namespace std;
+//int main() 
+//{
+  //  using namespace std;
 
   /* cout << "Hello World!\n";
    cout << "Take the road from the entrance to the nearest junction\n";
@@ -312,7 +312,7 @@ int main()
     */
     // alphanum = static_cast<unsigned char>(tolower(alphanum));
     
-    string alphanum; 
+    /*string alphanum; 
 
     cout << "Enter a number in alphabets from 0 - 4 (e.g 'zero')\n"; 
 
@@ -354,7 +354,321 @@ int main()
             cout << alphanum << " is also known as " << num << endl;
         }
         
+    }*/
+    
+    // Constant Expressions 
+    
+    // constexpr double pi = 3.14159265359; 
+    
+    // pi = 7; // error: assignement to constant 
+    
+    // double c = 2 * pi * r; 
+    
+    
+    // constexpr int max = 17; // a literal is a constant expression 
+    
+    // int val = 19; 
+    
+    // max + 2; // a constant expression (a const int plus a literal)
+    
+    // val + 2; // not a constant expression: it uses a variable
+        
+    
+    /*constexpr int max = 100; 
+    
+    void use(int n)
+    
+    {
+      constexpr int c1 = max + 7; // c1 is 107
+        
+      constexpr int c2 = n + 7; // error: no value of c2 
+    
+      // ...........
+    }
+ 
+    */
+    
+    // do while loop 
+    /*
+    int number{};
+    
+    do {
+        cout << "Enter an integer between 1 and 5: ";
+        cin >> number;
+    }   
+    while (number <= 1 || number >= 5);
+    
+    cout << "Thanks" << endl;
+    */
+    
+    /*
+    char selection{};
+    do {
+        cout << "\n------------------------------" << endl;
+        cout << "1. Do this" << endl;
+        cout << "1. Do that" << endl;
+        cout << "1. Do something else" << endl;
+        cout << "Q. Quit" << endl;
+        cout << "\nEnter your selection: ";
+        
+        cin >> selection;
+        /*if (selection == '1') 
+            cout << "You chose 1 - doing this" << endl;
+        else if (selection == '2')
+            cout << "You chose 2 - doing that" << endl;
+        else if (selection == '3')
+            cout << "You chose 3 - doing something else" << endl;
+        else 
+            cout << "See You Again" << endl; 
+        */
+        
+      /*  switch (selection) {
+            case '1': cout << "You chose 1 - doing this" << endl; 
+                break;
+            case '2': cout << "You chose 2 - doing that" << endl;
+                break;
+            case '3': cout << "You chose 3 - doing something else" << endl;
+                break;
+            //default: cout << "Not a valid option. " << endl;
+        }
+        
+        
+    } while (selection != 'q' && selection != 'Q');
+    
+    
+    
+    */
+    
+    /*
+    while (1 > 0)
+    {
+        char again{};
+        cout << "Do you want to loop again? (Y/N): ";
+        cin >> again;
+        
+        if (again == 'N' || again == 'n')
+            break;
+    }
+    */
+    
+    /*
+    for (int num1{1}; num1 <= 10; ++num1)
+    {
+        for (int num2{1}; num2 <= 10; ++num2)
+        {
+            cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+        }
+        cout << "------------------------------------------" << endl;
+    }
+    
+    cout << endl;
+    */
+    
+    /*
+    int num_items{};
+    
+    cout << "How many data items do you have? ";
+    cin >> num_items;
+    
+    vector<int> data{};
+    
+    for (int i{1}; i <= num_items; ++i)
+    {
+        int data_item{}; 
+        cout << "Enter data item " << i << ": ";
+        cin >> data_item;
+        data.push_back(data_item);
     } 
+  
+    // displaying the values of the data_items 
+    // displaying the values in a histogram 
+    
+    cout << "\nDisplaying Histogram" << endl;
+    
+    for (auto val: data)
+    {
+        for (int i(1); i <= val; ++i) 
+            {
+               if (i % 5 == 0) cout << "*";
+               else cout << "-";
+            }
+        cout << endl;
+    }
+        
+    */ 
+    
+    
+    
+    /*
+    for (int fahr = -100; fahr <= 400; fahr += 25)
+    {
+        cout << "Fahr = " << fahr << 
+        ", Cels = " << 5./9. * (fahr - 32) << endl; 
+    }
+    */
+    
+    /*
+    unsigned int n = 1;
+    while ( n <= 10 )
+        cout << n++ << endl;
+
+    cout << endl; 
+    */
+    /*
+    for (double y = 0.1; y < 1.0; y += .1)
+    {
+        cout << y << endl;
+    }*/
+    
+    
+    /*switch (n)
+    {
+        case 1:
+            cout << "The number is 1" << endl;
+        case 2:
+            cout << "The number is 2" << endl;
+            break;
+        default:
+            cout << "The number is not 1 or 2" << endl;
+            break;*/
+    //}
+    /*int n; 
+    
+    do 
+    {
+        cout << "Enter a positive number: " << endl;
+        cin >> n;
+    }
+    while ( n<= 0 );
+    
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << "#" << endl;
+        }
+        
+        cout << "\n" << endl;
+    }
+    
+    
+    cout << endl;
+    */
+        
+    // type identifier ( parameter list ) function body
+    /*
+    void write_sorry() // take no argument
+    {
+        cout << "Sorry\n";
+    }*/
+    
+    //makes the computation logically separable 
+    //makes the program text clearer
+    //makes it possible to use the fxn in more than one place 
+    //eases testing
+    
+    
+    
+    
+int main ()
+{    
+    using namespace std;
+    
+    
+    /*for (int i = 0; i < 100; ++i)
+    {
+        print_square(i);
+    }
+    */
+    
+    // A vector is simply a sequence of elements, 
+    // You can access
+    // By an Index
+    
+    // vector of 6 ints 
+    //vector<int> v = {5, 7, 8, 9, 10, 6}; 
+    
+    //vector<string> philosopher 
+    //= {"Kant", "Plato", "Hiume", "Kierkegaard"}; // 4 string
+    
+   //vector<int> vi(6); // vector of 6 ints init to 0
+    //vector<string> vs(4); // vector of 4 ints init to "" 
+    
+    //Traversing a vector 
+    
+    //for (int i = 0; i < v.size(); i++)
+        //cout << v[i] << '\n';
+        
+    //for (int x : v) // for each x in v 
+        //cout  << x << '\n';
+        
+    
+    
+    // v.size() gives us the 
+    
+    //cout << philosopher << endl;
+    
+    
+    /*vector<double>vf; // empty vector 
+    vf.push_back(2.7); // adds an element 2.7 at end of v
+    vf.push_back(5.6);
+    vf.push_back(7.9);
+    
+    for (auto x : vf) // for each x in vf
+        cout  << x << '\n';
+    */
+
+
+    /*
+    vector<double>temps; // temperatures
+    
+    for (double temp; cin >> temp;) // read into temp 
+        temps.push_back(temp);  // put temp into vector 
+    
+    // compute median temperature
+    sort(temps);    // sort temperatures
+    
+    cout << "Median Temprature: " << temps[temps.size()/2] << "\n";
+    */
+    
+    /*
+    double temp;
+    
+    while (cin>>temp) // read
+    temps.push_back(temp);  // put into vector
+    */
+    
+    /*
+    const vector<string>animals{"dog", "cat", "ant", "mouse", "bird", "goat", "rabbit"};
+
+    cout << "Enter an animal: " << endl;
+    
+    vector<string>words;
+    
+    for(string word; cin >> word;)
+    {
+        for(auto& c : word)
+        {
+            c = static_cast<unsigned char>(tolower(c));
+            //cout << c << endl;
+        }
+        for(const auto str : animals)
+        {
+            if(str == word)
+                word = "animals";
+        }
+        words.push_back(word); // push every word to back of vector 
+    }
+    
+    cout << "Number of words: " << words.size() << endl;
+    
+    for(auto str : words)
+    {
+        cout << str << " ";
+    }
+    
+    cout << endl;
+    */
     
     
     keep_window_open();
