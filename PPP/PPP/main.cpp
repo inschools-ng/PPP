@@ -14,15 +14,22 @@ int main()
     cout << command << endl;
     char c{};
     do {
-        int num1{};
-        int num2{};
+        
+        double num1{};
+        double num2{};
+        double marginOfError = 1.0/100;
+        
         
         if (cin >> num1 >> num2)
         {   
             cout << "Entered numbers: " << num1 << " and " << num2 << endl;
-            if (num1 == num2)
+            if (num1 - num2 == 0)
             {
                 cout << "The entered numbers are equal!\n" << endl;
+            }
+            else if (fabs(num1 - num2) <= marginOfError)
+            {
+                cout << "The numbers are almost equal" << endl;
             }
             else
             { 
