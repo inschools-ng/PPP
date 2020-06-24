@@ -1,10 +1,22 @@
 # pragma once 
 
+#ifndef main_h
+#define main_h
+
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
 #include <string>
 #include <vector>
+#include <algorithm>
+#include <climits>
+#include <cfloat>
+#include <typeinfo>
+#include <numeric>
+#include <random>
+#include <limits>
+#include <ctime>
+
 
 // Simple function to keep window open 
 inline void keep_window_open()
@@ -26,7 +38,8 @@ inline void  simple_error(std::string s) // write error: s and exit program
 }
 
 // Simple function to square numbers
-void print_square(int v)
+/*void print_square(int v)
 {
     std::cout << v << '\t' << v * v << '\n';
-}
+}*/
+#endif

@@ -670,6 +670,56 @@ int main ()
     cout << endl;
     */
     
+    // Drill 1 Section Four 
+    /*int i = 0;
+    int k = 0;
+    char ch;
+    
+    do {
+        cout << "Enter two integers(Separated by an ENTER key): " << endl;
+        cin >> i >> k;
+        cout << i << k << endl;
+    }
+    while(cin >> ch && ch != '|');  
+    */
+    
+    
+    double i;
+    double k;
+    char ch;
+    
+    do {
+        cout << "Enter two integers(Separated by an ENTER key): " << endl;
+        cin >> i >> k;
+        cout << i << " and " << k << endl;
+        
+        if ((i - k) > (1.0/100))
+        {
+            cout << "The larger number is: " << i << "\n";
+        }
+        else if (0 < (i-k) < (1.0/100))
+        {
+            cout << "The numbers are almost equal." << endl;
+        }
+        else if ((i-k) == 0)
+        {
+            cout << "The numbers are equal." << endl;
+        }
+        /*else if (!((i-k) > (1.0/100)))
+        {
+           cout << "The smaller number is: " << i << "\n";
+        }*/
+        
+        /*else if ((i - k) < (1.0/100))
+        {
+            cout << "The numbers are almost equal." << endl;
+        }*/
+       
+    
+    }
+    while(cin >> ch && ch != '|');
+    
+    
     
     keep_window_open();
     return 0; 
