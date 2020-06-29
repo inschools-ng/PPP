@@ -4,21 +4,77 @@
 
 #include "main.h"
 
+
+
 int main()
 {
     using namespace std;
     constexpr char terminalChar = '|';
-    const string command{"Enter two numbers[SEPARATED BY A SPACE KEY] or enter " + string{terminalChar} + " to quit-" };
-    const unordered_map<string, double> convert{
+    const unordered_map<string, double> convert = {
         {"m", 100.0},   // convert m to cm
         {"cm", 1.00},   // already in cm
         {"in", 2.54},   // convert in to cm
         {"ft", 12.0 * 2.54} // convert ft to cm
     };
     
+    const string command{"Enter a number & unit(m,cm,in,ft) to convert or enter " + string{terminalChar} + " to quit-" };
     cout << command << endl;
-    char c{};
     
+    char c{};
+    while(cin.get(c) && c != terminalChar)
+    {
+        cin.putback(c);
+        static double min{DBL_MAX};
+        static double max{DBL_MIN};
+        
+        // get number
+        static double enteredMeasurement{};
+        cin >> enteredMeasurement;
+        // assume 1 as the default measurement if no value is put in
+        if (!cin)
+        {
+            cin.clear();
+            enteredMeasurement = 1.0;
+        }
+        
+        // unit of measurement 
+        static string UnitOfMeasurement;
+        cin >> UnitOfMeasurement;
+        // check validity of UnitOfMeasurement entered and
+        // convert if valid
+        auto itr{convert.find(UnitOfMeasurement)};
+        if (itr != convert.end())
+        {
+            static double convertedMeasurement{};
+            convertedMeasurement = enteredMeasurement * itr->second;
+            cout << enteredMeasurement << UnitOfMeasurement << " converted to " << convertedMeasurement << "cm\n";
+            if (min > convertedMeasurement)
+            {
+                min = convertedMeasurement;
+                cout << convertedMeasurement << "cm is the smallest number so far!\n\n";
+            }
+            if (max < convertedMeasurement)
+            {
+                max = convertedMeasurement;
+                cout << convertedMeasurement << "cm is the largest number so far!\n\n";
+            }
+        }
+        else if (UnitOfMeasurement.find(terminalChar) != string::npos)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Entry was invalid! Please try again!!" << endl;
+        }
+    }
+    cout << "Termination '" << terminalChar << "' found\n";    
+    
+    keep_window_open();
+    return 0;
+}
+
+// 
     /*do {
         
        
@@ -96,56 +152,3 @@ int main()
         cout << command << endl;
     }
     */
-    
-    while(cin.get(c) && c != terminalChar)
-    {
-        cin.putback(c);
-        static double min{DBL_MAX};
-        static double max{DBL_MIN};
-        
-        // get number
-        static double enteredMeasurement{};
-        cin >> enteredMeasurement;
-        // assume 1 as the default measurement if no value is put in
-        if (!cin)
-        {
-            cin.clear();
-            enteredMeasurement = 1.0;
-        }
-        
-        // unit of measurement 
-        static string UnitOfMeasurement;
-        cin >> UnitOfMeasurement;
-        // check validity of UnitOfMeasurement entered and
-        // convert if valid
-        auto itr{convert.find(UnitOfMeasurement)};
-        if (itr != convert.end())
-        {
-            static double convertedMeasurement{};
-            convertedMeasurement = enteredMeasurement * itr->second;
-            cout << enteredMeasurement << UnitOfMeasurement << " converted to " << convertedMeasurement << "cm\n";
-            if (min > convertedMeasurement)
-            {
-                min = convertedMeasurement;
-                cout << convertedMeasurement << "cm is the smallest number so far!\n\n";
-            }
-            if (max < convertedMeasurement)
-            {
-                max = convertedMeasurement;
-                cout << convertedMeasurement << "cm is the largest number so far!\n\n";
-            }
-        }
-        else if (UnitOfMeasurement.find(terminalChar) != string::npos)
-        {
-            break;
-        }
-        else
-        {
-            cout << "Entry was invalid! Please try again!!" << endl;
-        }
-    }
-    cout << "Termination '" << terminalChar << "' found\n";    
-    
-    keep_window_open();
-    return 0;
-}

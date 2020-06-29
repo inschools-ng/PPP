@@ -16,6 +16,7 @@
 #include <random>
 #include <limits>
 #include <ctime>
+#include <unordered_map>
 
 
 // Simple function to keep window open 
