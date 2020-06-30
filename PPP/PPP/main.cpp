@@ -10,6 +10,7 @@ int main()
 {
     using namespace std;
     constexpr char terminalChar = '|';
+    const string command{"Enter a number & unit(m,cm,in,ft) to convert or enter " + string{terminalChar} + " to quit-" };
     const unordered_map<string, double> convert = {
         {"m", 100.0},   // convert m to cm
         {"cm", 1.00},   // already in cm
@@ -17,16 +18,12 @@ int main()
         {"ft", 12.0 * 2.54} // convert ft to cm
     };
     
-    const string command{"Enter a number & unit(m,cm,in,ft) to convert or enter " + string{terminalChar} + " to quit-" };
+    vector<double> enteredMeasurements{};
     cout << command << endl;
-    
     char c{};
     while(cin.get(c) && c != terminalChar)
     {
         cin.putback(c);
-        static double min{DBL_MAX};
-        static double max{DBL_MIN};
-        
         // get number
         static double enteredMeasurement{};
         cin >> enteredMeasurement;
@@ -47,17 +44,8 @@ int main()
         {
             static double convertedMeasurement{};
             convertedMeasurement = enteredMeasurement * itr->second;
+            enteredMeasurements.push_back(convertedMeasurement);
             cout << enteredMeasurement << UnitOfMeasurement << " converted to " << convertedMeasurement << "cm\n";
-            if (min > convertedMeasurement)
-            {
-                min = convertedMeasurement;
-                cout << convertedMeasurement << "cm is the smallest number so far!\n\n";
-            }
-            if (max < convertedMeasurement)
-            {
-                max = convertedMeasurement;
-                cout << convertedMeasurement << "cm is the largest number so far!\n\n";
-            }
         }
         else if (UnitOfMeasurement.find(terminalChar) != string::npos)
         {
@@ -67,8 +55,22 @@ int main()
         {
             cout << "Entry was invalid! Please try again!!" << endl;
         }
+        
+        cout << command << '\n';
+        
+        if (!(enteredMeasurements.empty()))
+        {
+            sort(enteredMeasurements.begin(), enteredMeasurements.end());
+            cout << "Number of values entered: " << enteredMeasurements.size() << '\n';
+            cout << "The smallest value entered is " << enteredMeasurements.front() << "m\n";
+            cout << "The largest value entered is " << enteredMeasurements.back() << "m\n";
+            cout << "The sum of the values entered is " << accumulate(enteredMeasurements.cbegin(), enteredMeasurements.cend(), 0.0) << "m\n";       
+        }
+        
     }
     cout << "Termination '" << terminalChar << "' found\n";    
+    
+    
     
     keep_window_open();
     return 0;
