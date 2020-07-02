@@ -56,21 +56,19 @@ int main()
             cout << "Entry was invalid! Please try again!!" << endl;
         }
         
-        cout << command << '\n';
-        
-        if (!(enteredMeasurements.empty()))
-        {
-            sort(enteredMeasurements.begin(), enteredMeasurements.end());
-            cout << "Number of values entered: " << enteredMeasurements.size() << '\n';
-            cout << "The smallest value entered is " << enteredMeasurements.front() << "m\n";
-            cout << "The largest value entered is " << enteredMeasurements.back() << "m\n";
-            cout << "The sum of the values entered is " << accumulate(enteredMeasurements.cbegin(), enteredMeasurements.cend(), 0.0) << "m\n";       
-        }
-        
+        cout << command << '\n';        
     }
     cout << "Termination '" << terminalChar << "' found\n";    
     
-    
+    if (!(enteredMeasurements.empty()))
+    {
+        sort(enteredMeasurements.begin(), enteredMeasurements.end());
+        cout << "Number of values entered: " << enteredMeasurements.size() << '\n';
+        cout << "The smallest value entered is " << enteredMeasurements.front() << "m\n";
+        cout << "The largest value entered is " << enteredMeasurements.back() << "m\n";
+        cout << "The sum of the values entered is " << accumulate(enteredMeasurements.cbegin(), enteredMeasurements.cend(), 0.0) << "m\n";       
+    }
+
     
     keep_window_open();
     return 0;
