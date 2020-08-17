@@ -1,3 +1,3 @@
-int fact (int i){};
+/* int fact (int i);
 void interactive_factorial();
-int absolute_value(int num);
+int absolute_value(int num); */
